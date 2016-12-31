@@ -1,14 +1,17 @@
-var x = 2, fns = [];
+var x = 2,
+    fns = [];
 
-(function(){
-	var x = 5;
+(function() {
+    var x = 5;
 
-	for (var i=0; i<x; i++) {
-		// ..
-	}
+    for (let i = 0; i < x; i++) {
+        fns[i] = function myFunc() {
+            return i;
+        };
+    }
 })();
 
 console.log(
-	(x * 2) === fns[x*2]()
+    (x * 2) === fns[x * 2]()
 );
 // true
